@@ -1,4 +1,4 @@
-Here's a professional README file documentation for the CrewAI-Groq Assignment Evaluator:
+Documentation for the CrewAI-Groq Assignment Evaluator:
 
 ```markdown
 # CrewAI-Groq Assignment Evaluator
@@ -70,12 +70,19 @@ To evaluate an assignment:
    Your assignment description here...
    """
    ```
+2.create  agents and trask 
+agent = Agent(
+    role='name the Grader',
+    goal='provide what to achive',
+    backstory=f"""give background regarding agent""",
+    verbose=True,
+    llm=llm,
+    allow_delegation=False
+)
 
-2. Create and run the evaluation crew:
+3. Create and run the evaluation crew:
    ```python
    from crewai import Crew
-   from your_agent_definitions import clarity_agent, relevance_agent, accuracy_agent, tone_agent, examples_agent
-
    crew = Crew(
        agents=[clarity_agent, relevance_agent, accuracy_agent, tone_agent, examples_agent],
        tasks=[task_clarity, task_relevance, task_accuracy, task_tone, task_examples]
@@ -120,13 +127,6 @@ Each agent performs a corresponding task (e.g., task_clarity, task_relevance) us
 
 You can customize the evaluation criteria by modifying the agent definitions and task instructions in the respective Python files.
 
-## Testing
-
-Run the test suite to ensure system functionality:
-
-```
-python -m unittest discover tests
-```
 
 ## Contributing
 
@@ -139,4 +139,3 @@ This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md
 
 This README provides a comprehensive overview of the CrewAI-Groq Assignment Evaluator, including installation instructions, usage guidelines, system architecture, and customization options. It's structured to help users and potential contributors quickly understand and start using the system.
 
-You may want to adjust specific details such as the repository URL, license type, or add more specific information about your implementation as needed. Additionally, you should create the referenced CONTRIBUTING.md and LICENSE.md files to complete the documentation.
